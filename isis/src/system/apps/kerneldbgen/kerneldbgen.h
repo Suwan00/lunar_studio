@@ -5,15 +5,14 @@ For more details about the LICENSE terms and the AUTHORS, you will
 find files of those names at the top level of this repository. **/
 
 /* SPDX-License-Identifier: CC0-1.0 */
+#ifndef kerneldbgen_h
+#define kerneldbgen_h
 
-#include "Isis.h"
+#include "Cube.h"
+#include "UserInterface.h"
 
-#include "Application.h"
-#include "kerneldbgen.h"
-
-using namespace Isis;
-
-void IsisMain() {
-  UserInterface &ui = Application::GetUserInterface();
-  kerneldbgen(ui);
+namespace Isis{
+  extern void kerneldbgen(UserInterface &ui);
 }
+
+#endif
