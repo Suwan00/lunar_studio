@@ -26,6 +26,24 @@ find_library(OPENCV_XFEATURES2D_LIBRARY       NAMES opencv_xfeatures2d)
 find_library(OPENCV_HIGHGUI_LIBRARY           NAMES opencv_highgui)
 find_library(OPENCV_FLANN_LIBRARY             NAMES opencv_flann)
 
+#find_library(OPENCV_XFEATURES2D_LIBRARY
+#  NAMES opencv_xfeatures2d
+#  PATHS /opt/homebrew/opt/opencv/lib
+#  NO_DEFAULT_PATH
+#)
+#
+#find_library(OPENCV_VIDEOSTAB_LIBRARY
+#  NAMES opencv_videostab
+#  PATHS /opt/homebrew/opt/opencv/lib
+#  NO_DEFAULT_PATH
+#)
+#
+#find_library(OPENCV_SUPERRES_LIBRARY
+#  NAMES opencv_superres
+#  PATHS /opt/homebrew/opt/opencv/lib
+#  NO_DEFAULT_PATH
+#)
+
 get_filename_component(OPENCV_ROOT_INCLUDE_DIR "${OPENCV_INCLUDE_DIR}" DIRECTORY)
 
 message(STATUS "OPENCV INCLUDE DIR: ${OPENCV_INCLUDE_DIR}")

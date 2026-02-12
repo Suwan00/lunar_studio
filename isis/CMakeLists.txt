@@ -169,6 +169,11 @@ set(thirdPartyCppFlags -Wall
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(NANOFLANN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/isis/3rdParty/nanoflann)
+include_directories(${NANOFLANN_INCLUDE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/isis/isis/3rdParty/nanoflann)
+
+
 # Append CPP flags set in the third party lib file to the string set in this file.
 string(REPLACE ";" " " FLAGS_STR "${thirdPartyCppFlags}")
 
@@ -199,7 +204,7 @@ else()
 endif()
 
 # Paths to required executables
-find_program(XALAN Xalan REQUIRED)
+# find_program(XALAN Xalan REQUIRED)
 find_program(LATEX latex)
 find_program(DOXYGEN NAME doxygen PATH_SUFFIXES doxygen REQUIRED)
 find_program(UIC uic REQUIRED)
@@ -276,6 +281,7 @@ find_package(NN                REQUIRED)
 find_package(OpenCV    3.1.0   REQUIRED)
 find_package(PCL               REQUIRED)
 find_package(Protobuf          REQUIRED)
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS foo.proto bar.proto)
 find_package(Qwt       6       REQUIRED)
 find_package(SuperLU   4.3     REQUIRED)
 find_package(TIFF      4.0.0   REQUIRED)
@@ -289,6 +295,19 @@ find_package(Geos    3.5.0     REQUIRED)
 find_package(Armadillo         REQUIRED)
 find_package(Threads)
 find_package(inja              REQUIRED)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+# find_package(absl REQUIRED)
+# target_link_libraries(YourTarget PRIVATE absl::base absl::strings absl::log)
+
+# # CMakeLists.txt에 추가
+# set(ABSL_ROOT_DIR "/opt/anaconda3/envs/cmake_luti/abseil-cpp/build")
+# set(ABSL_INCLUDE_DIR "/opt/anaconda3/envs/cmake_luti/abseil-cpp")
+
+# link_directories("/opt/anaconda3/envs/cmake_luti/abseil-cpp/build")
+
+
 
 # Setup for googletest/googlemock before adding SensorUtilities so we build its tests
 if(buildTests)
@@ -304,6 +323,7 @@ endif()
 set(BUILD_SHARED_LIBS ON)
 
 add_subdirectory(../SensorUtilities SensorUtilities)
+# add_subdirectory(src/luti)
 
 # In this case, we specify the version numbers being searched for in the non-traditional installs.
 if(APPLE)
@@ -465,7 +485,7 @@ endif()
 # - This long call passes all desired variables to the script.
 add_custom_target(docs COMMAND ${CMAKE_COMMAND}
                   -DPROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR}
-                  -DDOXYGEN=${DOXYGEN}  -DXALAN=${XALAN}
+                  -DDOXYGEN=${DOXYGEN}  # -DXALAN=${XALAN}
                   -DLATEX=${LATEX}
                   -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
                   -DPACKAGE_VERSION=${PACKAGE_VERSION}

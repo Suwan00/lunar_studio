@@ -10,7 +10,8 @@
 
 class QRectF;
 
-class QwtIntervalSeriesData; 
+#include <qwt_series_data.h> // QwtIntervalSeriesData 정의 포함
+// class QwtIntervalSeriesData; 
 
 namespace Isis {
   /**

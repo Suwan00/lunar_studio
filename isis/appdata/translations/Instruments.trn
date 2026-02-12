@@ -88,6 +88,11 @@ Group = InstrumentName
   Translation   = (Tc, TC1)
   Translation   = (Tc, TC2)
 
+  #Kplo
+  Translation   = (Luti, LUTIA)
+  Translation   = (Luti, LUTIB)
+  Translation   = (Luti, LUTI)
+
   # LO
   Translation   = (Hrc, "High Resolution Camera")
   Translation   = (Mrc, "Medium Resolution Camera")
@@ -141,10 +146,6 @@ Group = InstrumentName
   Translation   = (OCams, MapCam)
   Translation   = (OCams, SamCam)
   Translation   = (OCams, PolyCam)
-
-  Translation   = (TagCams, NAVCam)
-  Translation   = (TagCams, NFTCam)
-  Translation   = (TagCams, StowCam)
 
   # Rosetta
   Translation   = (Osiris, OSINAC)

@@ -17,10 +17,15 @@ xsi:noNamespaceSchemaLocation=
     information acquired.
     </p>
     <p>
+    Input points can be specified individually (Sample/Line or Latitude/Longitude),
+    via a coordinate list file (COORDLIST), or by generating a grid of points
+    using an offset from a starting sample/line (USEOFFSET).
+    </p>
+    <p>
     Note the input image cube has preliminary requirements:
     <ul>
       <li>The input image requires <def>SPICE</def> information (see <i>spiceinit</i>).</li>
-      <li>The input image cube must be a <def>Level0</def>  or a <def>Level1</def> ISIS cube.</li>
+      <li>The input image cube must be a <def>Level0</def> or a <def>Level1</def> ISIS cube.</li>
       <li>To use a <def>Level2</def> file as the input image (see <i>mappt</i>).</li>
     </ul>
     </p>
@@ -38,7 +43,7 @@ xsi:noNamespaceSchemaLocation=
     The following is a partial list of coordinates computed in the <i>campt</i> application:<br />
     <br />
     <b>Geometric Information</b>: <def>Latitude</def>, <def>Longitude</def>, <def>Oblique Detector Resolution</def>,
-       <def>Line Resolution</def>, <def>Oblique Line Resolution</def> <br />
+      <def>Line Resolution</def>, <def>Oblique Line Resolution</def> <br />
     <br />
     <b>Photometric Information</b>: <def link="Phase Angle">Phase</def>,
     <def link="Emission Angle">Emission</def>, and <def link="Incidence
@@ -65,56 +70,57 @@ xsi:noNamespaceSchemaLocation=
     <pre>
 Group = GroundPoint
   Filename                   = $ISISDATA/base/examples/ab102401.cub
-  <def>Sample</def>                     = 1.0
-  <def>Line</def>                       = 1.0
+  <def>Sample</def>                       = 1.0
+  <def>Line</def>                         = 1.0
   <def link="Digital Number">PixelValue</def>                 = 0.0607816
   <def link="Right Ascension">RightAscension</def>             = 65.749350916052 &lt;DEGREE&gt;
-  <def>Declination</def>                = -18.390093214966 &lt;DEGREE&gt;
+  <def>Declination</def>                  = -18.390093214966 &lt;DEGREE&gt;
   <def link="Planetocentric Latitude">PlanetocentricLatitude</def>     = 34.444196777763 &lt;DEGREE&gt;
   <def link="Planetographic Latitude">PlanetographicLatitude</def>     = 34.760399604837 &lt;DEGREE&gt;
   <def link="Positive East Longitude">PositiveEastLongitude</def>      = 223.84999971299 &lt;DEGREE&gt;
   <def link="Positive West Longitude">PositiveWestLongitude</def>      = 136.15000028701 &lt;DEGREE&gt;
   <def link="Body Fixed Coordinate">BodyFixedCoordinate</def>        = (-2015.9595225544, -1936.6155808127, 1917.2574858384) &lt;km&gt;
-  <def link="Local Radius">LocalRadius</def>                = 3389756.4767145 &lt;m&gt;
-  <def link="Sample Resolution">SampleResolution</def>           = 536.05556350077 &lt;m/pixel&gt;
-  <def link="Line Resolution">LineResolution</def>             = 536.05556350077 &lt;m/pixel&gt;
+  <def link="Local Radius">LocalRadius</def>                  = 3389756.4767145 &lt;m&gt;
+  <def link="Sample Resolution">SampleResolution</def>             = 536.05556350077 &lt;m/pixel&gt;
+  <def link="Line Resolution">LineResolution</def>               = 536.05556350077 &lt;m/pixel&gt;
   <def link="Oblique Detector Resolution">ObliqueDetectorResolution</def>  = 151.26661909292 &lt;m/pixel&gt;
-  <def link="Oblique Pixel Resolution">ObliquePixelResolution</def>     = 605.06647637166 &lt;m/pixel&gt;
+  <def link="Oblique Pixel Resolution">ObliquePixelResolution</def>       = 605.06647637166 &lt;m/pixel&gt;
   <def link="Oblique Line Resolution">ObliqueLineResolution</def>      = 605.06647637166 &lt;m/pixel&gt;
   <def link="Oblique Sample Resolution">ObliqueSampleResolution</def>    = 605.06647637166 &lt;m/pixel&gt;
   # Spacecraft Information
   SpacecraftPosition         = (-2025.6211429076, -2130.1417975758, 2009.318879871) &lt;km&gt;
   <def link="Spacecraft Azimuth">SpacecraftAzimuth</def>          = 0.006855593033889 &lt;DEGREE&gt;
-  <def link="Slant Distance">SlantDistance</def>              = 214.52515878961 &lt;km&gt;
+  <def link="Slant Distance">SlantDistance</def>                = 214.52515878961 &lt;km&gt;
   <def link="Target Center Distance">TargetCenterDistance</def>       = 3560.6189705415 &lt;km&gt;
   <def link="SubSpacecraft Latitude">SubSpacecraftLatitude</def>      = 34.354896748841 &lt;DEGREE&gt;
   <def link="SubSpacecraft Longitude">SubSpacecraftLongitude</def>     = 226.44072947174 &lt;DEGREE&gt;
   SpacecraftAltitude         = 170.83335389965 &lt;km&gt;
-  <def link="Off Nadir Angle">OffNadirAngle</def>              = 36.149255932304 &lt;DEGREE&gt;
+  <def link="Off Nadir Angle">OffNadirAngle</def>                = 36.149255932304 &lt;DEGREE&gt;
   <def link="SubSpacecraft Ground Azimuth">SubSpacecraftGroundAzimuth</def> = 91.64525294858 &lt;DEGREE&gt;
 
   # Sun Information
-  SunPosition                = (-177337948.13839, 112957442.69098, -33704752.205292) &lt;km&gt;
-  <def link="Sun Azimuth">SubSolarAzimuth</def>            = 172.30460990873 &lt;DEGREE&gt;
-  SolarDistance             = 1.4234246174889 &lt;AU&gt;
-  <def link="SubSolar Latitude">SubSolarLatitude</def>           = -9.1071705738361 &lt;DEGREE&gt;
-  <def link="SubSolar Longitude">SubSolarLongitude</def>          = 147.50443340123 &lt;DEGREE&gt;
+  SunPosition                  = (-177337948.13839, 112957442.69098, -33704752.205292) &lt;km&gt;
+  <def link="Sun Azimuth">SubSolarAzimuth</def>              = 172.30460990873 &lt;DEGREE&gt;
+  SolarDistance                = 1.4234246174889 &lt;AU&gt;
+  <def link="SubSolar Latitude">SubSolarLatitude</def>             = -9.1071705738361 &lt;DEGREE&gt;
+  <def link="SubSolar Longitude">SubSolarLongitude</def>            = 147.50443340123 &lt;DEGREE&gt;
   <def link="Subsolar Ground Azimuth">SubSolarGroundAzimuth</def>      = 254.69139701227 &lt;DEGREE&gt;
 
   # Illumination and Other
-  <def link="Phase Angle">Phase</def>                      = 120.59515694473 &lt;DEGREE&gt;
-  <def link="Incidence Angle">Incidence</def>                  = 84.106289446623 &lt;DEGREE&gt;
-  <def link="Emission Angle">Emission</def>                   = 38.288719431206 &lt;DEGREE&gt;
-  <def link="North Azimuth">NorthAzimuth</def>               = 261.46910874636 &lt;DEGREE&gt;
+  <def link="Phase Angle">Phase</def>                       = 120.59515694473 &lt;DEGREE&gt;
+  <def link="Incidence Angle">Incidence</def>                   = 84.106289446623 &lt;DEGREE&gt;
+  <def link="Emission Angle">Emission</def>                    = 38.288719431206 &lt;DEGREE&gt;
+  <def link="North Azimuth">NorthAzimuth</def>                = 261.46910874636 &lt;DEGREE&gt;
 
   # Time
-  <def link="Ephemeris Time">EphemerisTime</def>              = -69382819.160519 &lt;seconds&gt;
-  <def>UTC</def>                        = 1997-10-20T10:58:37.6570806
+  <def link="Ephemeris Time">EphemerisTime</def>                = -69382819.160519 &lt;seconds&gt;
+  <def>UTC</def>                         = 1997-10-20T10:58:37.6570806
   LocalSolarTime             = 17.089704420784 &lt;hour&gt;
-  <def link="Solar Longitude">SolarLongitude</def>             = 201.83159041209 &lt;DEGREE&gt;
-  Error                      = NULL
+  <def link="Solar Longitude">SolarLongitude</def>               = 201.83159041209 &lt;DEGREE&gt;
+  Error                        = NULL
 End_Group
     </pre>
+
   </description>
 
   <category>
@@ -249,100 +255,6 @@ End_Group
         </filter>
       </parameter>
 
-      <parameter name = "USECOORDLIST">
-        <type>boolean</type>
-        <default><item>FALSE</item></default>
-        <brief>
-          Enable coordinate list parameters in the GUI
-        </brief>
-        <description>
-          Selecting this parameter will enable the 'COORDLIST' and 'COORDTYPE' parameters in the
-          GUI.
-          <p>
-            Note that this parameter is optional when running <i>campt</i> on the
-            command line.
-          </p>
-        </description>
-        <inclusions>
-          <item>COORDLIST</item>
-          <item>COORDTYPE</item>
-        </inclusions>
-        <exclusions>
-          <item>TYPE</item>
-          <item>SAMPLE</item>
-          <item>LINE</item>
-          <item>LATITUDE</item>
-          <item>LONGITUDE</item>
-        </exclusions>
-      </parameter>
-
-      <parameter name="COORDLIST">
-        <type>filename</type>
-        <fileMode>input</fileMode>
-        <brief>
-          Input comma-delimited file of image or ground coordinates
-        </brief>
-        <internalDefault>None</internalDefault>
-        <description>
-          An input comma-delimited flatfile of image coordinates or ground coordinates.
-          This allows the program to process multiple coordinates in a single run of <i>campt</i>,
-          and output the results to the specified output file.
-          <p>
-            Expected order for image coordinates: sample, line<br/>
-            Expected order for ground coordinates: latitude, longitude
-          </p>
-          <p>
-            The "Error" keyword will only appear when using a coordinate list. The value of "Error"
-            will then be NULL unless an error occurs during the processing of a coordinate in the
-            coordinate list. Then, the value of this keyword will be the error message. This allows
-            for <i>campt</i> to continue processing the remaining coordinates in the coordinate
-            list.
-          </p>
-          <p>
-            For the input of Latitude and Longitude, campt expects
-            <def>Planetocentric Latitude</def> (within -90 to 90 boundary) and
-            <def>Positive East Longitude</def> (with 0-360 boundary) to find the location in the
-            input camera image.
-          </p>
-        </description>
-        <exclusions>
-          <item>TYPE</item>
-          <item>SAMPLE</item>
-          <item>LINE</item>
-          <item>LATITUDE</item>
-          <item>LONGITUDE</item>
-        </exclusions>
-      </parameter>
-
-      <parameter name="COORDTYPE">
-        <type>string</type>
-        <brief>Coordinate type selection (Image or Ground) for 'COORDLIST'</brief>
-        <list>
-          <option value="IMAGE">
-            <brief>Interprets coordinates in 'COORDLIST' as sample/line</brief>
-            <description>
-              This option interprets the coordinates provided in the input coordinate list file
-              as sample/line and will compute latitude/longitude and Projection x/y.
-            </description>
-          </option>
-          <option value="GROUND">
-            <brief>Interprets the coordinates in 'COORDLIST' as latitude/longitude</brief>
-            <description>
-              This option interprets the coordinates provided in the input coordinate list file
-              as latitude/longitude and will compute sample/line and Projection x/y.
-            </description>
-          </option>
-        </list>
-        <description>
-          This parameter is used to select the type of coordinates entered in the coordinate list
-          file, which will be used to determine the method to compute the geometric
-          and photometric information.
-        </description>
-  <exclusions>
-    <item>TYPE</item>
-  </exclusions>
-      </parameter>
-
       <parameter name="TO">
         <type>filename</type>
         <fileMode>output</fileMode>
@@ -350,102 +262,16 @@ End_Group
         <internalDefault>None</internalDefault>
         <description>
           A text file in label format (<def>PVL</def>) which will
-          contain the results of <i>campt</i>.  This file can
+          contain the results of <i>campt</i>. This file can
           be used in conjunction with the <i>getkey</i> application
           in order to pass the results to another program when developing
-          scripts.
+          scripts. If this parameter is not entered, output will be to the
+          terminal.
         </description>
-      </parameter>
-
-      <parameter name="FORMAT">
-        <type>string</type>
-        <brief>
-          Output format (PVL or FLAT)
-        </brief>
-        <description>
-          Format type for output file.  PVL format is default.
-        </description>
-        <default><item>PVL</item></default>
-        <list>
-          <option value="PVL">
-            <brief>
-              PVL format
-            </brief>
-            <description>
-              Output file will be in PVL format
-            </description>
-          </option>
-          <option value="FLAT">
-            <brief>
-              Flat file format
-            </brief>
-            <description>
-              Output file will be a comma-delimited flatfile.  This file format
-              can easily be imported into <i>Excel</i>.
-            </description>
-          </option>
-        </list>
-      </parameter>
-
-      <parameter name="APPEND">
-        <type>boolean</type>
-        <brief>
-          Option to append results to output file
-        </brief>
-        <description>
-          If this option is selected, the output from the application will be
-          appended to the output file.  If it is not selected, any information
-          in the 'TO' file will be overwritten.
-        </description>
-        <default><item>TRUE</item></default>
-      </parameter>
-
-      <parameter name="ALLOWOUTSIDE">
-        <type>boolean</type>
-        <brief>
-          Allow sample/line values outside the image to be reported
-        </brief>
-        <description>
-          The Allowoutside parameter influences how <i>campt</i> will report
-          resulting latitude/longitude and sample/line coordinates that fall
-          outside the input cube pixel boundaries.
-          <p>
-          The default is set to True, which allows <i>campt</i> to return
-          the values that are outside the cube pixel boundaries. For example,
-          a given latitude/longitude might return a sample location of -1.0
-          (a single whole pixel coordinate off the left side of the image).
-          This is a feature of the ISIS camera models.
-          </p>
-          <p>
-          When set to False, if a returned coordinate is off the image,
-          <i>campt</i> will fail.  This failure can be indicated and ignored
-          within a batch script when only coordinates that fall within the
-          image cube pixel boundaries are desired.
-          </p>
-        </description>
-        <default><item>TRUE</item></default>
-      </parameter>
-      <parameter name="ALLOWERROR">
-        <type>boolean</type>
-        <brief>
-          Allow campt to output results regardless of errors. 
-        </brief>
-        <description>
-          The Allowerror parameter enables <i>campt</i> to return results despite any errors. 
-          Errors will be listed under "Error" in the result table, providing the user with information 
-          about points that may lack surface intersection.
-          <p>
-            By default, <i>campt</i> is set to False, causing it to throw an error if any occur.
-          </p>
-          <p>
-            If <i>campt</i> is set to True, errors will be displayed in the error section of the results table instead of being thrown.
-          </p>
-        </description>
-        <default><item>FALSE</item></default>
       </parameter>
     </group>
 
-    <group name="Position">
+<group name="Position">
       <parameter name="TYPE">
         <type>string</type>
         <brief>Coordinate type selection (Image or Ground)</brief>
@@ -495,11 +321,10 @@ End_Group
 
       <parameter name="LINE">
         <type>double</type>
-
         <brief>
           Line position to report
         </brief>
-      <internalDefault>Center line</internalDefault>
+        <internalDefault>Center line</internalDefault>
         <description>
             This is the <def>Line</def> position used to compute information
             at a given pixel location in the input image cube.
@@ -537,6 +362,404 @@ End_Group
         </description>
         <minimum inclusive="yes">0.0</minimum>
         <maximum inclusive="yes">360.0</maximum>
+      </parameter>
+
+      <parameter name="USECOORDLIST">
+        <type>boolean</type>
+        <default><item>FALSE</item></default>
+        <brief>
+          Enable coordinate list parameters in the GUI
+        </brief>
+        <description>
+          Selecting this parameter will enable the 'COORDLIST' and 'COORDTYPE' parameters in the
+          GUI. This allows processing multiple coordinates from a file.
+          <p>
+            Note that this parameter is optional when running <i>campt</i> on the
+            command line.
+          </p>
+        </description>
+        <inclusions>
+          <item>COORDLIST</item>
+          <item>COORDTYPE</item>
+        </inclusions>
+        <exclusions>
+          <item>SAMPLE</item>
+          <item>LINE</item>
+          <item>LATITUDE</item>
+          <item>LONGITUDE</item>
+          <item>USEOFFSET</item>
+        </exclusions>
+      </parameter>
+
+      <parameter name="COORDLIST">
+        <type>filename</type>
+        <fileMode>input</fileMode>
+        <brief>
+          Input comma-delimited file of image or ground coordinates
+        </brief>
+        <internalDefault>None</internalDefault>
+        <description>
+          An input comma-delimited flatfile of image coordinates or ground coordinates.
+          This allows the program to process multiple coordinates in a single run of <i>campt</i>,
+          and output the results to the specified output file.
+          <p>
+            Expected order for image coordinates: sample, line<br/>
+            Expected order for ground coordinates: latitude, longitude
+          </p>
+        </description>
+      </parameter>
+
+      <parameter name="COORDTYPE">
+        <type>string</type>
+        <default><item>IMAGE</item></default>
+        <brief>Coordinate type selection (Image or Ground) for 'COORDLIST'</brief>
+        <description>
+          This parameter is used to select the type of coordinates entered in the coordinate list
+          file, which will be used to determine the method to compute the geometric
+          and photometric information.
+        </description>
+        <list>
+          <option value="IMAGE">
+            <brief>Interprets coordinates in 'COORDLIST' as sample/line</brief>
+            <description>
+              This option interprets the coordinates provided in the input coordinate list file
+              as sample/line and will compute latitude/longitude and Projection x/y.
+            </description>
+          </option>
+          <option value="GROUND">
+            <brief>Interprets the coordinates in 'COORDLIST' as latitude/longitude</brief>
+            <description>
+              This option interprets the coordinates provided in the input coordinate list file
+              as latitude/longitude and will compute sample/line and Projection x/y.
+            </description>
+          </option>
+        </list>
+      </parameter>
+
+      <parameter name="USEOFFSET">
+        <type>boolean</type>
+        <default><item>FALSE</item></default>
+        <brief>Generate a grid of points using offsets</brief>
+        <description>
+          If true, input points will be generated from a starting sample/line
+          offset and a number of samples/lines. The SAMPLE/LINE parameters will be
+          used as the starting offset.
+        </description>
+        <inclusions>
+          <item>NSAMPLES</item>
+          <item>NLINES</item>
+        </inclusions>
+        <exclusions>
+          <item>USECOORDLIST</item>
+          <item>COORDLIST</item>
+          <item>COORDTYPE</item>
+          <item>TYPE</item>
+          <item>LATITUDE</item>
+          <item>LONGITUDE</item>
+        </exclusions>
+      </parameter>
+
+      <parameter name="NSAMPLES">
+        <type>integer</type>
+        <brief>Number of samples for offset grid</brief>
+        <description>Number of samples to compute when USEOFFSET is true.</description>
+        <default><item>1</item></default>
+        <minimum inclusive="yes">1</minimum>
+      </parameter>
+
+      <parameter name="NLINES">
+        <type>integer</type>
+        <brief>Number of lines for offset grid</brief>
+        <description>Number of lines to compute when USEOFFSET is true.</description>
+        <default><item>1</item></default>
+        <minimum inclusive="yes">1</minimum>
+      </parameter>
+    </group>
+
+    <group name="Output Options">
+      <parameter name="FORMAT">
+        <type>string</type>
+        <brief>Output format (PVL or FLAT)</brief>
+        <description>Format type for output file. PVL format is default.</description>
+        <default><item>PVL</item></default>
+        <list>
+          <option value="PVL"><brief>PVL format</brief></option>
+          <option value="FLAT"><brief>Flat file (comma-delimited)</brief></option>
+        </list>
+      </parameter>
+
+      <parameter name="APPEND">
+        <type>boolean</type>
+        <brief>Append results to output file if it exists</brief>
+        <description>
+          If true, output will be appended to the TO file. Otherwise, the TO file will be overwritten.
+        </description>
+        <default><item>TRUE</item></default>
+      </parameter>
+
+      <parameter name="ALLOWOUTSIDE">
+        <type>boolean</type>
+        <brief>Allow sample/line values outside the image to be reported</brief>
+        <description>
+          If true (default), campt will report values even if they fall outside image boundaries.
+          If false, campt will error for points outside the image.
+        </description>
+        <default><item>TRUE</item></default>
+      </parameter>
+
+      <parameter name="ALLOWERROR">
+        <type>boolean</type>
+        <brief>Allow campt to output results regardless of projection errors</brief>
+        <description>
+          If true, campt will try to continue processing and report NULLs or error messages for points
+          that fail (e.g., no surface intersection). If false (default), it will throw an error.
+        </description>
+        <default><item>FALSE</item></default>
+      </parameter>
+
+      <!-- Boolean parameters for optional outputs -->
+      <parameter name="LOOKDIRECTIONBODYFIXED">
+        <type>boolean</type>
+        <brief>Output LookDirectionBodyFixed</brief>
+        <description>Controls whether LookDirectionBodyFixed is included in output (units stripped if true).</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="LOOKDIRECTIONJ2000">
+        <type>boolean</type>
+        <brief>Output LookDirectionJ2000</brief>
+        <description>Controls whether LookDirectionJ2000 is included in output (units stripped if true).</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="LOOKDIRECTIONCAMERA">
+        <type>boolean</type>
+        <brief>Output LookDirectionCamera</brief>
+        <description>Controls whether LookDirectionCamera is included in output (units stripped if true).</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+
+      <parameter name="RightAscension">
+        <type>boolean</type>
+        <brief>Output RightAscension</brief>
+        <description>Controls whether RightAscension is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="Declination">
+        <type>boolean</type>
+        <brief>Output Declination</brief>
+        <description>Controls whether Declination is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="PlanetographicLatitude">
+        <type>boolean</type>
+        <brief>Output PlanetographicLatitude</brief>
+        <description>Controls whether PlanetographicLatitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="PositiveEast180Longitude">
+        <type>boolean</type>
+        <brief>Output PositiveEast180Longitude</brief>
+        <description>Controls whether PositiveEast180Longitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="PositiveWest360Longitude">
+        <type>boolean</type>
+        <brief>Output PositiveWest360Longitude</brief>
+        <description>Controls whether PositiveWest360Longitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="PositiveWest180Longitude">
+        <type>boolean</type>
+        <brief>Output PositiveWest180Longitude</brief>
+        <description>Controls whether PositiveWest180Longitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="LineResolution">
+        <type>boolean</type>
+        <brief>Output LineResolution</brief>
+        <description>Controls whether LineResolution is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="ObliqueDetectorResolution">
+        <type>boolean</type>
+        <brief>Output ObliqueDetectorResolution</brief>
+        <description>Controls whether ObliqueDetectorResolution is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="ObliquePixelResolution">
+        <type>boolean</type>
+        <brief>Output ObliquePixelResolution</brief>
+        <description>Controls whether ObliquePixelResolution is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="ObliqueLineResolution">
+        <type>boolean</type>
+        <brief>Output ObliqueLineResolution</brief>
+        <description>Controls whether ObliqueLineResolution is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="ObliqueSampleResolution">
+        <type>boolean</type>
+        <brief>Output ObliqueSampleResolution</brief>
+        <description>Controls whether ObliqueSampleResolution is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SpacecraftAzimuth">
+        <type>boolean</type>
+        <brief>Output SpacecraftAzimuth</brief>
+        <description>Controls whether SpacecraftAzimuth is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="TargetCenterDistance">
+        <type>boolean</type>
+        <brief>Output TargetCenterDistance</brief>
+        <description>Controls whether TargetCenterDistance is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSpacecraftLatitude">
+        <type>boolean</type>
+        <brief>Output SubSpacecraftLatitude</brief>
+        <description>Controls whether SubSpacecraftLatitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSpacecraftLongitude">
+        <type>boolean</type>
+        <brief>Output SubSpacecraftLongitude</brief>
+        <description>Controls whether SubSpacecraftLongitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SpacecraftAltitude">
+        <type>boolean</type>
+        <brief>Output SpacecraftAltitude</brief>
+        <description>Controls whether SpacecraftAltitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="OffNadirAngle">
+        <type>boolean</type>
+        <brief>Output OffNadirAngle</brief>
+        <description>Controls whether OffNadirAngle is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSpacecraftGroundAzimuth">
+        <type>boolean</type>
+        <brief>Output SubSpacecraftGroundAzimuth</brief>
+        <description>Controls whether SubSpacecraftGroundAzimuth is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SunPosition">
+        <type>boolean</type>
+        <brief>Output SunPosition</brief>
+        <description>Controls whether SunPosition is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSolarAzimuth">
+        <type>boolean</type>
+        <brief>Output SubSolarAzimuth</brief>
+        <description>Controls whether SubSolarAzimuth is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SolarDistance">
+        <type>boolean</type>
+        <brief>Output SolarDistance</brief>
+        <description>Controls whether SolarDistance is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSolarLatitude">
+        <type>boolean</type>
+        <brief>Output SubSolarLatitude</brief>
+        <description>Controls whether SubSolarLatitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSolarLongitude">
+        <type>boolean</type>
+        <brief>Output SubSolarLongitude</brief>
+        <description>Controls whether SubSolarLongitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SubSolarGroundAzimuth">
+        <type>boolean</type>
+        <brief>Output SubSolarGroundAzimuth</brief>
+        <description>Controls whether SubSolarGroundAzimuth is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="Phase">
+        <type>boolean</type>
+        <brief>Output Phase Angle</brief>
+        <description>Controls whether Phase Angle is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="Incidence">
+        <type>boolean</type>
+        <brief>Output Incidence Angle</brief>
+        <description>Controls whether Incidence Angle is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="Emission">
+        <type>boolean</type>
+        <brief>Output Emission Angle</brief>
+        <description>Controls whether Emission Angle is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="NorthAzimuth">
+        <type>boolean</type>
+        <brief>Output NorthAzimuth</brief>
+        <description>Controls whether NorthAzimuth is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="UTC">
+        <type>boolean</type>
+        <brief>Output UTC</brief>
+        <description>Controls whether UTC is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="LocalSolarTime">
+        <type>boolean</type>
+        <brief>Output LocalSolarTime</brief>
+        <description>Controls whether LocalSolarTime is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+      
+      <parameter name="SolarLongitude">
+        <type>boolean</type>
+        <brief>Output SolarLongitude</brief>
+        <description>Controls whether SolarLongitude is included in output.</description>
+        <default><item>TRUE</item></default>
+      </parameter>
+
+      <!-- Internal parameters for rotation matrices -->
+      <parameter name="C2M_RotationMatrix" internal="true">
+        <type>boolean</type>
+        <default><item>TRUE</item></default>
       </parameter>
     </group>
   </groups>

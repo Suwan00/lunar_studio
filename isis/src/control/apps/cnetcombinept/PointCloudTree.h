@@ -113,21 +113,20 @@ template <class T> class PointCloudTree {
      *
      * @return @b QList<T> A list of all the points within the radius.
      */
-    QList<T> radius_query(const T &point, const double &radius_sq) {
-      std::vector<std::pair<size_t, double> > matches;
+	QList<T> radius_query(const T &point, const double &radius_sq) {
+    // unsigned int로 명시적 타입 지정
+    std::vector<std::pair<size_t, double>> matches;  // 원래 방식으로 돌아가기
 
-      (void) m_kd_index.radiusSearch(point.array(), radius_sq, matches,
-                                     nanoflann::SearchParams());
+    (void) m_kd_index.radiusSearch(point.array(), radius_sq, matches,
+                                  nanoflann::SearchParams());
 
-      QList<T> points;
-      for ( int i = 0 ; i < (int) matches.size() ; i++ ) {
-        points.push_back( m_pc->point(matches[i].first) );
-      }
-
-      return (points);
+    QList<T> points;
+    for (int i = 0; i < (int)matches.size(); i++) {
+        points.push_back(m_pc->point(matches[i].first));
     }
 
-
+    return points;
+	}
     /**
      * Performs a query for the nearest neighbors to a point.
      *
