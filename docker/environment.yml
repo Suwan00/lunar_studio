@@ -35,6 +35,9 @@ dependencies:
   # inja — C++ templating library; required by upstream ISIS3 dev branch
   # (find_package(inja REQUIRED) in isis/CMakeLists.txt).
   - inja>=3.3,<3.6
+  # nn — Pavel Sakov's Natural Neighbours interpolation library; ISIS3
+  # uses it in several apps. FindNN.cmake looks for nn.h and libnn.
+  - nn=1.86.0
 
   # Geospatial / data formats
   - gdal>=3.7,<3.8
