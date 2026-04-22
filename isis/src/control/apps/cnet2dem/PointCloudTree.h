@@ -105,7 +105,7 @@ namespace Isis {
         std::vector<std::pair<size_t, double> > matches;
 
         int n = m_kd_index.radiusSearch(point.array(), radius_sq, matches,
-                                        nanoflann::SearchParams());
+                                        nanoflann::SearchParameters());
         return (PointCloudSearchResult<T,D>(point, radius_sq, matches, m_pc, n));
       }
 

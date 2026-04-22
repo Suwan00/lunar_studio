@@ -53,6 +53,15 @@ ENV CONDA_PREFIX=/opt/conda/envs/lunar_studio
 ENV PATH=/opt/conda/envs/lunar_studio/bin:/opt/conda/bin:${PATH}
 
 # ---------------------------------------------------------------------------
+# ccache — speeds up iterative rebuilds of the ISIS3 source tree. Inserted
+# as a separate RUN so the preceding apt / conda env steps stay cached.
+# ---------------------------------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends ccache \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV CCACHE_DIR=/opt/ccache
+ENV CCACHE_MAXSIZE=5G
+
+# ---------------------------------------------------------------------------
 # ISIS3 fork source (Lunar Studio additions: KPLO LUTI + campt modifications)
 # Injected via BuildKit named build context `isis_src` — see build_image.sh.
 # ---------------------------------------------------------------------------
@@ -67,6 +76,9 @@ COPY --from=isis_src . ${ISIS3_ROOT}/
 #     findfeatures, crop, camrange, isis2std) plus the LUTI camera model.
 #   - Final install prefix: /opt/ISIS3/build (matches existing Lunar Studio
 #     image layout so downstream scripts keep working).
+#   - The BuildKit cache mount at /opt/ccache persists compile artefacts
+#     across docker builds so subsequent iterations only rebuild objects
+#     that actually changed.
 # ---------------------------------------------------------------------------
 RUN --mount=type=cache,target=/opt/ccache \
     source /opt/conda/etc/profile.d/conda.sh && conda activate lunar_studio \
@@ -78,8 +90,11 @@ RUN --mount=type=cache,target=/opt/ccache \
         -DJP2KFLAG=OFF \
         -Dpybindings=OFF \
         -DbuildTests=OFF \
+        -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+        -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
         ../isis \
     && ninja -j"$(nproc)" install \
+    && ccache -s || true \
     && find ${ISIS3_ROOT}/build -name "*.o" -delete
 
 # Ensure the conda-env campt (with our modifications) shadows any leftover
