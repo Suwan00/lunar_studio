@@ -169,9 +169,10 @@ set(thirdPartyCppFlags -Wall
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(NANOFLANN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/isis/3rdParty/nanoflann)
-include_directories(${NANOFLANN_INCLUDE_DIR})
-include_directories(${PROJECT_SOURCE_DIR}/isis/isis/3rdParty/nanoflann)
+# NB: nanoflann is resolved below via find_package(nanoflann REQUIRED) and
+# its include path wired in through include_directories(${NANOFLANN_INCLUDE_DIR}).
+# The upstream repo used to ship a vendored copy under isis/3rdParty/nanoflann;
+# that was removed, so we rely on the conda-forge nanoflann package instead.
 
 
 # Append CPP flags set in the third party lib file to the string set in this file.
@@ -289,6 +290,7 @@ find_package(TNT       126     REQUIRED)
 find_package(XercesC   3.1.2   REQUIRED)
 find_package(X11       6       REQUIRED)
 find_package(nanoflann         REQUIRED)
+include_directories(${NANOFLANN_INCLUDE_DIR})
 find_package(PNG               REQUIRED)
 find_package(Kakadu)
 find_package(Geos    3.5.0     REQUIRED)

@@ -38,6 +38,11 @@ dependencies:
   # nn — Pavel Sakov's Natural Neighbours interpolation library; ISIS3
   # uses it in several apps. FindNN.cmake looks for nn.h and libnn.
   - nn=1.86.0
+  # nanoflann — header-only kd-tree library. Upstream ISIS3 used to vendor
+  # it under isis/3rdParty/nanoflann but that copy was removed; we now rely
+  # on the conda-forge nanoflann package (Findnanoflann.cmake looks for
+  # nanoflann.hpp on the include path).
+  - nanoflann>=1.5,<2.0
 
   # Geospatial / data formats
   - gdal>=3.7,<3.8
