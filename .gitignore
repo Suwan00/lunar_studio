@@ -102,3 +102,15 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/macos
 .idea
+
+# --- Lunar Studio release additions ---
+# (the fork's top-level '*' pattern would otherwise hide extension-less files)
+!LICENSE
+!docker/Dockerfile
+
+# Python bytecode (release scripts)
+__pycache__/
+*.py[cod]
+
+# Release-prep helpers, not shipped
+dev/

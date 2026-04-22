@@ -1,0 +1,45 @@
+MIT License
+
+Copyright (c) 2026 The Lunar Studio Authors
+
+  Suwan Lee, Jo Ryeong Yim, Kibaek Park, Dong-Gyu Kim,
+  Eunhyeuk Kim, Minsup Jeong, Chae Kyung Sim, Seokju Lee
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+Bundled third-party software
+-------------------------------------------------------------------------------
+
+The Docker image produced from this repository bundles additional software
+components that retain their upstream licenses:
+
+  * ISIS3 (USGS Astrogeology Science Center) — Public Domain
+      https://github.com/DOI-USGS/ISIS3/blob/dev/LICENSE.md
+
+  * Ames Stereo Pipeline (NASA Ames / NeoGeographyToolkit) — Apache License 2.0
+      https://github.com/NeoGeographyToolkit/StereoPipeline/blob/master/LICENSE
+
+  * Miniconda (Anaconda, Inc.) — BSD 3-Clause
+      https://docs.conda.io/projects/miniconda/en/latest/miniconda-license.html
+
+The "Lunar Studio additions" to ISIS3 (the KPLO LUTI camera model and the
+modifications to the `campt` and `CameraPointInfo` sources) live in the
+separate ISIS3 fork at https://github.com/Suwan00/lunar_studio and are
+released under the ISIS3 upstream Public Domain dedication.
