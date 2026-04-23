@@ -94,7 +94,7 @@ RUN --mount=type=cache,target=/opt/ccache \
         -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
         ../isis \
     && ninja -j"$(nproc)" install \
-    && ccache -s || true \
+    && { ccache -s || true; } \
     && find ${ISIS3_ROOT}/build -name "*.o" -delete
 
 # Ensure the conda-env campt (with our modifications) shadows any leftover
