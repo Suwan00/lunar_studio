@@ -93,7 +93,7 @@ RUN --mount=type=cache,target=/opt/ccache \
         -DCMAKE_C_COMPILER_LAUNCHER=ccache \
         -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
         ../isis \
-    && ninja -j"$(nproc)" install \
+    && ninja -j"$(nproc)" \
     && { ccache -s || true; } \
     && find ${ISIS3_ROOT}/build -name "*.o" -delete
 
