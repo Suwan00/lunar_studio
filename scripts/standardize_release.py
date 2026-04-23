@@ -119,12 +119,19 @@ class Runner:
 # ---------------------------------------------------------------------------
 
 def site_png_patterns(cube_id: str, site: int) -> List[str]:
+    # Preference: the photometrically-normalised raw-pixel view first
+    # (.pho.pixelvalue), then plain pixelvalue, then .pho.campt, then
+    # .campt / .<dem>.campt, finally bare .png. Any of these sources get
+    # copied to {cube}.site{N}.png (echo / pho / pixelvalue all dropped).
     return [
+        f"{cube_id}.echo.site{site}.pho.pixelvalue.png",
         f"{cube_id}.echo.site{site}.pixelvalue.png",
+        f"{cube_id}.site{site}.pixelvalue.png",
         f"{cube_id}.echo.site{site}.pho.campt.png",
         f"{cube_id}.echo.site{site}.campt.png",
         f"{cube_id}.echo.site{site}.nacdtm.campt.png",
         f"{cube_id}.echo.site{site}.sldem.campt.png",
+        f"{cube_id}.echo.site{site}.pho.png",
         f"{cube_id}.echo.site{site}.png",
         f"{cube_id}.site{site}.png",   # already standardised — no-op path
     ]
@@ -150,10 +157,14 @@ def site_csv_patterns(cube_id: str, site: int) -> List[str]:
 
 
 def first_existing(dirs: Sequence[Path], names: Sequence[str]) -> Optional[Path]:
-    for d in dirs:
-        if not d.is_dir():
-            continue
-        for n in names:
+    # Outer loop on patterns, inner on dirs: prefer the highest-priority
+    # filename variant regardless of which sub-directory it sits in.
+    # (A .pho.pixelvalue.png buried under site/output/ still beats a plain
+    # .pho.png sitting directly in site/.)
+    for n in names:
+        for d in dirs:
+            if not d.is_dir():
+                continue
             p = d / n
             if p.exists():
                 return p
@@ -171,9 +182,13 @@ def standardise_site(release_site_dir: Path, cube_ids: Iterable[str],
     search_dirs: List[Path] = []
     if release_site_dir.is_dir():
         search_dirs.append(release_site_dir)
-        three_view = release_site_dir / "3_view"
-        if three_view.is_dir():
-            search_dirs.append(three_view)
+        # Common csv2parquet / curated-view subfolders. `output/` is where
+        # the csv2parquet pipeline dumps its PNG+parquet; `3_view/` (and
+        # friends) hold the hand-curated 3-orbit view.
+        for sub in ("output", "3_view", "2_view", "1_view"):
+            p = release_site_dir / sub
+            if p.is_dir():
+                search_dirs.append(p)
     if source_3view_dir is not None and source_3view_dir.is_dir():
         search_dirs.append(source_3view_dir)
     if not search_dirs:
@@ -263,20 +278,6 @@ def standardise_region_level(mission: str, cube_ids: Iterable[str],
 # Cleanup (post-standardise)
 # ---------------------------------------------------------------------------
 
-SITE_KEEP_GLOBS = [
-    "*.site[0-9].png",
-    "*.site[0-9].csv",
-    "*.site[0-9]_zdepth.parquet",
-    "*.site[0-9]_lola_cub_3d_comparison_*.npy",
-    "*_site[0-9]_*_RDR_*PointPerRow*.csv",   # renamed LOLA CSV
-    "*_PointPerRow*.csv",                      # raw LOLA CSV pre-rename
-    # Support site[0-9][0-9] too for future-proofing
-    "*.site[0-9][0-9].png",
-    "*.site[0-9][0-9].csv",
-    "*.site[0-9][0-9]_zdepth.parquet",
-    "*.site[0-9][0-9]_lola_cub_3d_comparison_*.npy",
-]
-
 REGION_KEEP_GLOBS_FILES = [
     "*.cub",
     "jigsawErr_bundleout_points.csv",
@@ -288,15 +289,41 @@ REGION_KEEP_GLOBS_DIRS = [
 ]
 
 
+# Glob patterns that additionally keep the hand-placed LOLA CSVs regardless
+# of their exact filename form. Everything else in a site folder that isn't
+# in the per-orbit explicit keep-set is deleted.
+LOLA_CSV_PATTERNS = [
+    "*_PointPerRow*.csv",                  # raw LOLA PDS download
+    "*_site[0-9]_*_RDR_*PointPerRow*.csv", # renamed LOLA CSV (lola_to_npy.py)
+]
+
+
 def matches_any(name: str, patterns: Iterable[str]) -> bool:
     return any(fnmatch.fnmatchcase(name, p) for p in patterns)
 
 
-def cleanup_site(release_site_dir: Path, runner: Runner) -> None:
+def canonical_site_names(cube_ids: Iterable[str], site: int) -> set[str]:
+    """Exact filenames that are allowed to survive in a cleaned site dir."""
+    keep: set[str] = set()
+    for cid in cube_ids:
+        keep.add(f"{cid}.site{site}.png")
+        keep.add(f"{cid}.site{site}.csv")
+        keep.add(f"{cid}.site{site}_zdepth.parquet")
+        keep.add(f"{cid}.site{site}_lola_cub_3d_comparison_lola_3d.npy")
+        keep.add(f"{cid}.site{site}_lola_cub_3d_comparison_cub_3d.npy")
+        keep.add(f"{cid}.site{site}_lola_cub_3d_comparison_pixel_coords.npy")
+    return keep
+
+
+def cleanup_site(release_site_dir: Path, cube_ids: Iterable[str],
+                 site: int, runner: Runner) -> None:
+    """Keep only canonical (exact-match) per-orbit files + LOLA CSVs;
+    delete everything else in the site directory recursively."""
     if not release_site_dir.is_dir():
         return
-    # Delete files in subdirs (e.g. leftover 3_view/ contents), then
-    # delete empty subdirs, then unmatched top-level files.
+    keep = canonical_site_names(cube_ids, site)
+    # Delete files in subdirs (3_view/, output/, cache/, …) recursively,
+    # then drop empty subdirs, then unmatched top-level files.
     for entry in sorted(release_site_dir.rglob("*"),
                         key=lambda p: -len(p.parts)):
         if entry == release_site_dir:
@@ -310,21 +337,29 @@ def cleanup_site(release_site_dir: Path, runner: Runner) -> None:
         if entry.parent != release_site_dir:
             runner.do(Action("delete", None, entry))
             continue
-        if matches_any(entry.name, SITE_KEEP_GLOBS):
+        if entry.name in keep:
+            continue
+        if matches_any(entry.name, LOLA_CSV_PATTERNS):
             continue
         runner.do(Action("delete", None, entry))
 
 
-def cleanup_region(release_region_dir: Path, runner: Runner) -> None:
+def cleanup_region(release_region_dir: Path, cube_ids: Iterable[str],
+                   runner: Runner) -> None:
+    """Keep only the per-shipping-orbit full cubes + the jigsaw CSV,
+    plus the site<N>/ sub-dirs. Everything else (older cubes for orbits
+    not in the shipping set, stray files, intermediate dirs) is removed."""
     if not release_region_dir.is_dir():
         return
+    keep_files = {f"{cid}.cub" for cid in cube_ids}
+    keep_files.add("jigsawErr_bundleout_points.csv")
     for entry in release_region_dir.iterdir():
         if entry.is_dir():
             if matches_any(entry.name, REGION_KEEP_GLOBS_DIRS):
                 continue
             runner.do(Action("delete", None, entry))
             continue
-        if matches_any(entry.name, REGION_KEEP_GLOBS_FILES):
+        if entry.name in keep_files:
             continue
         runner.do(Action("delete", None, entry))
 
@@ -333,6 +368,21 @@ def cleanup_region(release_region_dir: Path, runner: Runner) -> None:
 # Driver
 # ---------------------------------------------------------------------------
 
+def orbit_has_parquet(release_region_dir: Path, cube_id: str,
+                      num_sites: int) -> bool:
+    """An orbit is considered shippable only if at least one of its sites
+    carries a parquet. Checks every known variant and every subfolder we
+    later standardise from."""
+    candidates = []
+    for n in range(1, num_sites + 1):
+        site_dir = release_region_dir / f"site{n}"
+        for sub in (site_dir, site_dir / "output", site_dir / "3_view",
+                    site_dir / "2_view", site_dir / "1_view"):
+            for name in site_parquet_patterns(cube_id, n):
+                candidates.append(sub / name)
+    return any(p.exists() for p in candidates)
+
+
 def process_region(region: dict, release_root: Path, runner: Runner,
                    clean: bool) -> None:
     mission = region["mission"]
@@ -340,13 +390,24 @@ def process_region(region: dict, release_root: Path, runner: Runner,
     region_name = region["region"]
     reference_id = region["reference_id"]
     num_sites = int(region["num_sites"])
-    cube_ids: List[str] = region.get("cube_ids") or [reference_id]
+    configured_cube_ids: List[str] = region.get("cube_ids") or [reference_id]
     source_dir = Path(region["site_cubes_dir"])
 
     release_region_dir = release_root / mission / dem / region_name
+
+    # Auto-filter: only keep orbits whose site folders actually carry a
+    # parquet output. Orbits that only have a png (e.g. non-.pho. variants)
+    # are not part of the shipping set — the LNEM-ready parquet is the
+    # primary deliverable.
+    cube_ids = [c for c in configured_cube_ids
+                if orbit_has_parquet(release_region_dir, c, num_sites)]
+    dropped = [c for c in configured_cube_ids if c not in cube_ids]
+
     print(f"\n=== {mission}/{dem}/{region_name} "
           f"(reference={reference_id}, sites={num_sites}, "
-          f"orbits={len(cube_ids)}) ===")
+          f"orbits={len(cube_ids)}/{len(configured_cube_ids)}) ===")
+    if dropped:
+        print(f"  dropped orbits (no parquet): {', '.join(dropped)}")
 
     standardise_region_level(
         mission=mission, cube_ids=cube_ids,
@@ -368,8 +429,8 @@ def process_region(region: dict, release_root: Path, runner: Runner,
     if clean:
         print(f"  --- cleanup ---")
         for n in range(1, num_sites + 1):
-            cleanup_site(release_region_dir / f"site{n}", runner)
-        cleanup_region(release_region_dir, runner)
+            cleanup_site(release_region_dir / f"site{n}", cube_ids, n, runner)
+        cleanup_region(release_region_dir, cube_ids, runner)
 
 
 def main() -> int:
