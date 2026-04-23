@@ -102,7 +102,10 @@ namespace Isis {
       /** Perform radius query for points in kilometer units */
       PointCloudSearchResult<T,D> radius_query(const T &point,
                                                const double &radius_sq) {
-        std::vector<std::pair<size_t, double> > matches;
+        // nanoflann >=1.6 expects a vector of ResultItem here (previously
+        // std::pair<size_t, double>). ResultItem exposes .first/.second so the
+        // consumer code below stays unchanged.
+        std::vector<nanoflann::ResultItem<unsigned int, double>> matches;
 
         int n = m_kd_index.radiusSearch(point.array(), radius_sq, matches,
                                         nanoflann::SearchParameters());

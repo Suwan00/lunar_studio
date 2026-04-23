@@ -115,7 +115,10 @@ template <class T> class PointCloudTree {
      */
 	QList<T> radius_query(const T &point, const double &radius_sq) {
     // unsigned int로 명시적 타입 지정
-    std::vector<std::pair<size_t, double>> matches;  // keep the prior layout
+    // nanoflann >=1.6 expects a vector of ResultItem here (previously
+    // std::pair<size_t, double>). ResultItem exposes .first/.second so the
+    // consumer code below stays unchanged.
+    std::vector<nanoflann::ResultItem<unsigned int, double>> matches;
 
     (void) m_kd_index.radiusSearch(point.array(), radius_sq, matches,
                                   nanoflann::SearchParameters());

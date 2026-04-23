@@ -41,8 +41,9 @@ dependencies:
   # nanoflann — header-only kd-tree library. Upstream ISIS3 used to vendor
   # it under isis/3rdParty/nanoflann but that copy was removed; we now rely
   # on the conda-forge nanoflann package (Findnanoflann.cmake looks for
-  # nanoflann.hpp on the include path).
-  - nanoflann>=1.5,<2.0
+  # nanoflann.hpp on the include path). Pinned to >=1.6 because the source
+  # uses the ResultItem / SearchParameters API that was introduced there.
+  - nanoflann>=1.6,<2.0
 
   # Geospatial / data formats
   - gdal>=3.7,<3.8
