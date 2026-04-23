@@ -115,7 +115,9 @@ namespace Isis {
       /** Perform nearest set of points from its neighbors   */
       PointCloudSearchResult<T,D> neighbor_query(const T &point,
                                                   const int &neighbors) {
-        QVector<size_t> indices(neighbors);
+        // nanoflann >=1.6 knnSearch expects the index buffer as
+        // IndexType* (unsigned int*) rather than size_t*.
+        QVector<unsigned int> indices(neighbors);
         QVector<double> distances(neighbors);
         m_kd_index.knnSearch(point.array(), neighbors, indices.data(),
                              distances.data());

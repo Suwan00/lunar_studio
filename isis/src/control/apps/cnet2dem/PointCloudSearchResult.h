@@ -57,8 +57,9 @@ namespace Isis {
         m_pc            = QSharedPointer<PointCloud<T,D> > (0);
       }
 
+      // nanoflann >=1.6 gives back index buffers as IndexType (unsigned int).
       PointCloudSearchResult(const T &source, int neighbors,
-                      QVector<size_t> &indices, QVector<double> &distances,
+                      QVector<unsigned int> &indices, QVector<double> &distances,
                       QSharedPointer<PointCloud<T,D> > &pc) {
         Q_ASSERT ( indices.size() == distances.size() );
         Q_ASSERT ( neighbors == indices.size() );
