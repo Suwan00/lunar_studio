@@ -1,0 +1,61 @@
+# Lunar Studio — release-dataset configuration
+#
+# Each entry under `regions` describes one (mission, DEM, region) triple,
+# e.g. LRO NAC Apollo 15 with the NACDTM reference DEM. The release
+# scripts (extract_site_bounds.py, standardize_release.py,
+# lola_to_npy.py) all read this file.
+#
+# Fields:
+#   mission         logical sub-folder in release_data (e.g. lro_nac)
+#   dem             reference DEM label  (sldem | nacdtm)
+#   region          place label          (e.g. apollo15)
+#   reference_id    product id of the cube that anchored the site crops
+#                   (the one the vallis-style workflow used as REFERENCE_ID)
+#   num_sites       how many sites were cropped from the reference
+#   site_cubes_dir  directory holding the site<N>/ sub-folders produced by
+#                   crop_cubes.py
+#   full_cube       absolute path to the *uncropped* echo cube for the
+#                   reference orbit (copied to the region folder of the
+#                   release tree, with the .echo. infix dropped)
+#   jigsaw_csv      absolute path to jigsawErr_bundleout_points.csv from
+#                   the full-cube bundle adjustment (copied verbatim)
+#   cube_ids        product ids of every orbit shipped for this region;
+#                   the standardiser picks each one's parquet + PNG out
+#                   of site<N>/output/ and renames them
+#   cube_suffix     format string (default ".echo.site{site}.cub") that
+#                   turns (reference_id, site) into the cube basename
+#                   under site<N>/ — only override if your crop script
+#                   used a non-default naming scheme
+
+regions:
+  - mission: lro_nac
+    dem: nacdtm
+    region: apollo15
+    reference_id: M1144779525RE
+    num_sites: 5
+    # The release dataset tree is the source of truth — all scripts work
+    # in-place against release_data/<mission>/<dem>/<region>/site<N>/.
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/release_data/lro_nac/nacdtm/apollo15
+    full_cube: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/M1144779525RE.echo.cub
+    jigsaw_csv: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/jigsawErr_bundleout_points.csv
+    cube_ids:
+      - M1144779525RE
+      - M1356476581RE
+      - M183504057LE
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: apollo17
+    reference_id: M104311715RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/release_data/lro_nac/nacdtm/apollo17
+    full_cube: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/M104311715RE.echo.cub
+    jigsaw_csv: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/jigsawErr_bundleout_points.csv
+    cube_ids:
+      - M104311715RE
+      - M104318871RE
+      - M1218752280RE
+
+  # Add kplo_luti entries here with reference_id = KPLO_LUTIB_... and
+  # site_cubes_dir pointing at the KPLO LUTI crop tree; cube_ids then
+  # lists every LUTI orbit kept.
