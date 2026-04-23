@@ -1,0 +1,183 @@
+# Complete release config: 23 region entries (22 processable, 1 source-missing)
+# site_cubes_dir always points at SOURCE dir (guaranteed to have per-site cubes)
+
+regions:
+  # --- LRO NAC + NACDTM ---
+  - mission: lro_nac
+    dem: nacdtm
+    region: apollo15
+    reference_id: M1144779525RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: apollo16
+    reference_id: M181058717RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: apollo17
+    reference_id: M104311715RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: eimmartA   # release folder uses lowercase; source has capital E
+    reference_id: M1098408548RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: LacusMortisPit
+    reference_id: M1274083341LE
+    num_sites: 1      # single-site region (3_view style)
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/LacusMortisPit
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: MariusHillsPit
+    reference_id: M1256963084RE
+    num_sites: 1
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/MariusHillsPit
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: tycho
+    reference_id: M1206074763RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho
+
+  - mission: lro_nac
+    dem: nacdtm
+    region: vallis
+    reference_id: M1114512054LE    # same as test_vallis REFERENCE_ID
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm
+
+  # --- LRO NAC + SLDEM ---
+  - mission: lro_nac
+    dem: sldem
+    region: apollo15
+    reference_id: M1144779525RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15
+
+  - mission: lro_nac
+    dem: sldem
+    region: apollo16
+    reference_id: M181058717RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16
+
+  - mission: lro_nac
+    dem: sldem
+    region: apollo17
+    reference_id: M104311715RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17
+
+  - mission: lro_nac
+    dem: sldem
+    region: eimmartA
+    reference_id: M1098408548RE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA
+
+  - mission: lro_nac
+    dem: sldem
+    region: LacusMortisPit
+    reference_id: M1274083341LE
+    num_sites: 1
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/LacusMortisPit
+
+  - mission: lro_nac
+    dem: sldem
+    region: MariusHillsPit
+    reference_id: M1256963084RE
+    num_sites: 1
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/MariusHillsPit
+
+  - mission: lro_nac
+    dem: sldem
+    region: tycho
+    reference_id: M1267226882LE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho
+
+  - mission: lro_nac
+    dem: sldem
+    region: vallis
+    reference_id: M1114512054LE
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem
+
+  # --- KPLO LUTI + NACDTM --- (different cube_suffix: .site{site}.cub, no .echo.)
+  - mission: kplo_luti
+    dem: nacdtm
+    region: apollo15
+    reference_id: KPLO_LUTIB_240817_232939_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: nacdtm
+    region: apollo17
+    reference_id: KPLO_LUTIB_240816_002402_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: nacdtm
+    region: eimmartA
+    reference_id: KPLO_LUTIA_240909_133303_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: nacdtm
+    region: tycho
+    reference_id: KPLO_LUTIA_240915_171033_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho
+    cube_suffix: ".site{site}.cub"
+
+  # --- KPLO LUTI + SLDEM ---
+  - mission: kplo_luti
+    dem: sldem
+    region: apollo15
+    reference_id: KPLO_LUTIB_240817_232939_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: sldem
+    region: apollo17
+    reference_id: KPLO_LUTIB_240816_002402_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: sldem
+    region: eimmartA
+    reference_id: KPLO_LUTIA_240909_133303_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA
+    cube_suffix: ".site{site}.cub"
+
+  - mission: kplo_luti
+    dem: sldem
+    region: tycho
+    reference_id: KPLO_LUTIA_240915_171033_PP_M_00
+    num_sites: 5
+    site_cubes_dir: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho
+    cube_suffix: ".site{site}.cub"

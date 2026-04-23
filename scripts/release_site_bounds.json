@@ -1,0 +1,957 @@
+[
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "apollo15",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/site1/M1144779525RE.echo.site1.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.039719647132,
+        "max_lat": 26.062355226005,
+        "min_lon": 3.5272953752302,
+        "max_lon": 3.5525401970075
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/site2/M1144779525RE.echo.site2.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.123018404163,
+        "max_lat": 26.145641041985,
+        "min_lon": 3.5459129331521,
+        "max_lon": 3.5709140872579
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/site3/M1144779525RE.echo.site3.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.018396681193,
+        "max_lat": 26.041013142769,
+        "min_lon": 3.4902703554677,
+        "max_lon": 3.5155374901754
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/site4/M1144779525RE.echo.site4.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.119996003141,
+        "max_lat": 26.14261682931,
+        "min_lon": 3.5195166176358,
+        "max_lon": 3.5448355392649
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo15/site5/M1144779525RE.echo.site5.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.191861324215,
+        "max_lat": 26.214484044165,
+        "min_lon": 3.5387548354024,
+        "max_lon": 3.5642974920707
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "apollo16",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16/site1/M181058717RE.echo.site1.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.1944448266858,
+        "max_lat": -9.177583611036,
+        "min_lon": 15.438882409189,
+        "max_lon": 15.457817317318
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16/site2/M181058717RE.echo.site2.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.278641091727,
+        "max_lat": -9.2617992752314,
+        "min_lon": 15.461832248567,
+        "max_lon": 15.479841095438
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16/site3/M181058717RE.echo.site3.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.0222772595703,
+        "max_lat": -9.0054427454755,
+        "min_lon": 15.455178620641,
+        "max_lon": 15.473256817287
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16/site4/M181058717RE.echo.site4.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -8.897581604488,
+        "max_lat": -8.8807455577284,
+        "min_lon": 15.431964957998,
+        "max_lon": 15.449996008676
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo16/site5/M181058717RE.echo.site5.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -8.7928863210333,
+        "max_lat": -8.7760303578897,
+        "min_lon": 15.494506500907,
+        "max_lon": 15.514162690968
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "apollo17",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/site1/M104311715RE.echo.site1.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.183757605332,
+        "max_lat": 20.207517027058,
+        "min_lon": 30.71926961783,
+        "max_lon": 30.745868918752
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/site2/M104311715RE.echo.site2.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 19.838148221719,
+        "max_lat": 19.861941949089,
+        "min_lon": 30.800260246203,
+        "max_lon": 30.82661693733
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/site3/M104311715RE.echo.site3.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.282415054307,
+        "max_lat": 20.306212278924,
+        "min_lon": 30.822659269672,
+        "max_lon": 30.849802689281
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/site4/M104311715RE.echo.site4.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.01778318844,
+        "max_lat": 20.041602870712,
+        "min_lon": 30.769356425903,
+        "max_lon": 30.796745269791
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/apollo17/site5/M104311715RE.echo.site5.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.523523447047,
+        "max_lat": 20.547296809851,
+        "min_lon": 30.776248785483,
+        "max_lon": 30.803457983813
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "eimmartA",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA/site1/M1098408548RE.echo.site1.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.217190674833,
+        "max_lat": 24.228959789565,
+        "min_lon": 65.672513773078,
+        "max_lon": 65.70030330696
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA/site2/M1098408548RE.echo.site2.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.237746198645,
+        "max_lat": 24.249481166817,
+        "min_lon": 65.679074259499,
+        "max_lon": 65.706891398126
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA/site3/M1098408548RE.echo.site3.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.211247862617,
+        "max_lat": 24.223032694784,
+        "min_lon": 65.693272580833,
+        "max_lon": 65.7218573688
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA/site4/M1098408548RE.echo.site4.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 23.985964656409,
+        "max_lat": 23.997681190951,
+        "min_lon": 65.663742518755,
+        "max_lon": 65.692497596856
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/EinmartA/site5/M1098408548RE.echo.site5.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 23.975628038957,
+        "max_lat": 23.987363828252,
+        "min_lon": 65.700168357062,
+        "max_lon": 65.726714739037
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "MariusHillsPit",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/MariusHillsPit/site1/M1256963084RE.echo.site1.cub",
+        "reference_id": "M1256963084RE",
+        "min_lat": 14.082741172584,
+        "max_lat": 14.09992385704,
+        "min_lon": 303.22177186084,
+        "max_lon": 303.23815489376
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "tycho",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho/site1/M1206074763RE.echo.site1.cub",
+        "reference_id": "M1206074763RE",
+        "min_lat": -43.244548863008,
+        "max_lat": -43.234732485631,
+        "min_lon": 348.61343342892,
+        "max_lon": 348.6280379634
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho/site2/M1206074763RE.echo.site2.cub",
+        "reference_id": "M1206074763RE",
+        "min_lat": -43.172963534744,
+        "max_lat": -43.163145286015,
+        "min_lon": 348.63983194188,
+        "max_lon": 348.65483571093
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho/site3/M1206074763RE.echo.site3.cub",
+        "reference_id": "M1206074763RE",
+        "min_lat": -42.98346490105,
+        "max_lat": -42.973605873857,
+        "min_lon": 348.6704618005,
+        "max_lon": 348.68460712653
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho/site4/M1206074763RE.echo.site4.cub",
+        "reference_id": "M1206074763RE",
+        "min_lat": -42.89196094083,
+        "max_lat": -42.882157889953,
+        "min_lon": 348.6555862182,
+        "max_lon": 348.66983350915
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/tycho/site5/M1206074763RE.echo.site5.cub",
+        "reference_id": "M1206074763RE",
+        "min_lat": -43.153216463864,
+        "max_lat": -43.143364194795,
+        "min_lon": 348.62256150781,
+        "max_lon": 348.63818762108
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "vallis",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm/site1/M1114512054LE.echo.site1.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.982133227332,
+        "max_lat": 26.004953772699,
+        "min_lon": 309.44859602958,
+        "max_lon": 309.47522626122
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm/site2/M1114512054LE.echo.site2.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.730060430147,
+        "max_lat": 25.752894923322,
+        "min_lon": 309.41665353442,
+        "max_lon": 309.44374951615
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm/site3/M1114512054LE.echo.site3.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.490605937934,
+        "max_lat": 25.51343927982,
+        "min_lon": 309.42522176166,
+        "max_lon": 309.45142468433
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm/site4/M1114512054LE.echo.site4.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.441411794399,
+        "max_lat": 25.46424716131,
+        "min_lon": 309.41963161811,
+        "max_lon": 309.44612930771
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/nacdtm/site5/M1114512054LE.echo.site5.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.115603464763,
+        "max_lat": 25.138420323104,
+        "min_lon": 309.40022456642,
+        "max_lon": 309.42623508836
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "apollo15",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15/site1/M1144779525RE.echo.site1.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.039726844021,
+        "max_lat": 26.062358935705,
+        "min_lon": 3.5273058446728,
+        "max_lon": 3.5525541709045
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15/site2/M1144779525RE.echo.site2.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.123020210434,
+        "max_lat": 26.145641812622,
+        "min_lon": 3.545961009097,
+        "max_lon": 3.5709584229152
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15/site3/M1144779525RE.echo.site3.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.018401744648,
+        "max_lat": 26.041015932738,
+        "min_lon": 3.4902889918333,
+        "max_lon": 3.5155467561634
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15/site4/M1144779525RE.echo.site4.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.120001093518,
+        "max_lat": 26.142620054428,
+        "min_lon": 3.5195295576523,
+        "max_lon": 3.544837269378
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo15/site5/M1144779525RE.echo.site5.cub",
+        "reference_id": "M1144779525RE",
+        "min_lat": 26.191862737127,
+        "max_lat": 26.214483870048,
+        "min_lon": 3.5387510051849,
+        "max_lon": 3.5642949627567
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "apollo16",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16/site1/M181058717RE.echo.site1.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.1944448431356,
+        "max_lat": -9.1775839195422,
+        "min_lon": 15.438892115863,
+        "max_lon": 15.457818166726
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16/site2/M181058717RE.echo.site2.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.278641091727,
+        "max_lat": -9.2617992752314,
+        "min_lon": 15.461832248567,
+        "max_lon": 15.479841095438
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16/site3/M181058717RE.echo.site3.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -9.0222772595703,
+        "max_lat": -9.0054427454755,
+        "min_lon": 15.455178620641,
+        "max_lon": 15.473256817287
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16/site4/M181058717RE.echo.site4.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -8.897581604488,
+        "max_lat": -8.8807455577284,
+        "min_lon": 15.431964957998,
+        "max_lon": 15.449996008676
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo16/site5/M181058717RE.echo.site5.cub",
+        "reference_id": "M181058717RE",
+        "min_lat": -8.7928863210333,
+        "max_lat": -8.7760303578897,
+        "min_lon": 15.494506500907,
+        "max_lon": 15.514162690968
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "apollo17",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17/site1/M104311715RE.echo.site1.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.183757605332,
+        "max_lat": 20.207517027058,
+        "min_lon": 30.71926961783,
+        "max_lon": 30.745868918752
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17/site2/M104311715RE.echo.site2.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 19.838148221719,
+        "max_lat": 19.861941949089,
+        "min_lon": 30.800260246203,
+        "max_lon": 30.82661693733
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17/site3/M104311715RE.echo.site3.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.282415054307,
+        "max_lat": 20.306212278924,
+        "min_lon": 30.822659269672,
+        "max_lon": 30.849802689281
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17/site4/M104311715RE.echo.site4.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.01778318844,
+        "max_lat": 20.041602870712,
+        "min_lon": 30.769356425903,
+        "max_lon": 30.796745269791
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/apollo17/site5/M104311715RE.echo.site5.cub",
+        "reference_id": "M104311715RE",
+        "min_lat": 20.523523447047,
+        "max_lat": 20.547296809851,
+        "min_lon": 30.776248785483,
+        "max_lon": 30.803457983813
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "eimmartA",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA/site1/M1098408548RE.echo.site1.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.216810090616,
+        "max_lat": 24.228583215484,
+        "min_lon": 65.672422753449,
+        "max_lon": 65.700178288313
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA/site2/M1098408548RE.echo.site2.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.237346218876,
+        "max_lat": 24.249089269328,
+        "min_lon": 65.679054770207,
+        "max_lon": 65.706880426168
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA/site3/M1098408548RE.echo.site3.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 24.210863100953,
+        "max_lat": 24.222651818233,
+        "min_lon": 65.693199304723,
+        "max_lon": 65.72171097361
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA/site4/M1098408548RE.echo.site4.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 23.985964406222,
+        "max_lat": 23.997683371121,
+        "min_lon": 65.663740611267,
+        "max_lon": 65.69253205347
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/EinmartA/site5/M1098408548RE.echo.site5.cub",
+        "reference_id": "M1098408548RE",
+        "min_lat": 23.975273446981,
+        "max_lat": 23.987001301418,
+        "min_lon": 65.700195662384,
+        "max_lon": 65.726689646041
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "MariusHillsPit",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/MariusHillsPit/site1/M1256963084RE.echo.site1.cub",
+        "reference_id": "M1256963084RE",
+        "min_lat": 14.082740780262,
+        "max_lat": 14.099922528617,
+        "min_lon": 303.22177222788,
+        "max_lon": 303.23815596247
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "tycho",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho/site1/M1267226882LE.echo.site1.cub",
+        "reference_id": "M1267226882LE",
+        "min_lat": -43.262976517395,
+        "max_lat": -43.249981891319,
+        "min_lon": 348.62295015303,
+        "max_lon": 348.63953318565
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho/site2/M1267226882LE.echo.site2.cub",
+        "reference_id": "M1267226882LE",
+        "min_lat": -43.370170318747,
+        "max_lat": -43.357126662301,
+        "min_lon": 348.61079625443,
+        "max_lon": 348.63018376988
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho/site3/M1267226882LE.echo.site3.cub",
+        "reference_id": "M1267226882LE",
+        "min_lat": -43.399846429809,
+        "max_lat": -43.386947765465,
+        "min_lon": 348.60722880853,
+        "max_lon": 348.62751810702
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho/site4/M1267226882LE.echo.site4.cub",
+        "reference_id": "M1267226882LE",
+        "min_lat": -43.392921174324,
+        "max_lat": -43.3796838135,
+        "min_lon": 348.5568694783,
+        "max_lon": 348.57900236782
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/tycho/site5/M1267226882LE.echo.site5.cub",
+        "reference_id": "M1267226882LE",
+        "min_lat": -43.187518693878,
+        "max_lat": -43.174478822558,
+        "min_lon": 348.65202411887,
+        "max_lon": 348.66937074013
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "vallis",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem/site1/M1114512054LE.echo.site1.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.982138815949,
+        "max_lat": 26.004960786201,
+        "min_lon": 309.44852545827,
+        "max_lon": 309.47545068999
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem/site2/M1114512054LE.echo.site2.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.730001153486,
+        "max_lat": 25.752841904831,
+        "min_lon": 309.4162616338,
+        "max_lon": 309.44367175853
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem/site3/M1114512054LE.echo.site3.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.490579970258,
+        "max_lat": 25.513409723051,
+        "min_lon": 309.42526137261,
+        "max_lon": 309.45152266132
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem/site4/M1114512054LE.echo.site4.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.441387431196,
+        "max_lat": 25.464220263451,
+        "min_lon": 309.41962499031,
+        "max_lon": 309.44609218153
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/vallis/sldem/site5/M1114512054LE.echo.site5.cub",
+        "reference_id": "M1114512054LE",
+        "min_lat": 25.115582621402,
+        "max_lat": 25.13839155668,
+        "min_lon": 309.40024378208,
+        "max_lon": 309.42610106926
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "nacdtm",
+    "region": "apollo15",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15/site1/KPLO_LUTIB_240817_232939_PP_M_00.site1.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.035736871541,
+        "max_lat": 26.081960973235,
+        "min_lon": 3.5324566962364,
+        "max_lon": 3.6111074489194
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15/site2/KPLO_LUTIB_240817_232939_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.209470454719,
+        "max_lat": 26.254553507001,
+        "min_lon": 3.5645341291473,
+        "max_lon": 3.6407707967906
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15/site3/KPLO_LUTIB_240817_232939_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.080186288102,
+        "max_lat": 26.126804898672,
+        "min_lon": 3.4887688215419,
+        "max_lon": 3.5602700227591
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15/site4/KPLO_LUTIB_240817_232939_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 25.896193802142,
+        "max_lat": 25.941087798451,
+        "min_lon": 3.5199203199684,
+        "max_lon": 3.612687820503
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo15/site5/KPLO_LUTIB_240817_232939_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.100240290272,
+        "max_lat": 26.14524487074,
+        "min_lon": 3.5432778687311,
+        "max_lon": 3.6244772027995
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "nacdtm",
+    "region": "apollo17",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17/site1/KPLO_LUTIB_240816_002402_PP_M_00.site1.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.457498222471,
+        "max_lat": 20.502255706842,
+        "min_lon": 30.565401346658,
+        "max_lon": 30.625973560371
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17/site2/KPLO_LUTIB_240816_002402_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.557187269565,
+        "max_lat": 20.601878936459,
+        "min_lon": 30.571484091121,
+        "max_lon": 30.632779312178
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17/site3/KPLO_LUTIB_240816_002402_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.116029000921,
+        "max_lat": 20.16074312037,
+        "min_lon": 30.594304722093,
+        "max_lon": 30.649792629036
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17/site4/KPLO_LUTIB_240816_002402_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.315855903728,
+        "max_lat": 20.360639232572,
+        "min_lon": 30.57406742034,
+        "max_lon": 30.63769388157
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/apollo17/site5/KPLO_LUTIB_240816_002402_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.046008200463,
+        "max_lat": 20.090676784746,
+        "min_lon": 30.537462642194,
+        "max_lon": 30.595276795037
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "nacdtm",
+    "region": "eimmartA",
+    "sites": {
+      "site1": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA/site1/KPLO_LUTIA_240909_133303_PP_M_00.site1.cub"
+      },
+      "site2": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA/site2/KPLO_LUTIA_240909_133303_PP_M_00.site2.cub"
+      },
+      "site3": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA/site3/KPLO_LUTIA_240909_133303_PP_M_00.site3.cub"
+      },
+      "site4": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA/site4/KPLO_LUTIA_240909_133303_PP_M_00.site4.cub"
+      },
+      "site5": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/EinmartA/site5/KPLO_LUTIA_240909_133303_PP_M_00.site5.cub"
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "nacdtm",
+    "region": "tycho",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho/site1/KPLO_LUTIA_240915_171033_PP_M_00.site1.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.381537505754,
+        "max_lat": -43.342973948018,
+        "min_lon": 348.61602727129,
+        "max_lon": 348.68565515319
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho/site2/KPLO_LUTIA_240915_171033_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.638637133825,
+        "max_lat": -43.600002956348,
+        "min_lon": 348.63480043883,
+        "max_lon": 348.70592711096
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho/site3/KPLO_LUTIA_240915_171033_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -42.796079703356,
+        "max_lat": -42.757529400446,
+        "min_lon": 348.61171733697,
+        "max_lon": 348.68216018416
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho/site4/KPLO_LUTIA_240915_171033_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -42.965868199671,
+        "max_lat": -42.92720474559,
+        "min_lon": 348.66083360846,
+        "max_lon": 348.73472429754
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/nacdtm/tycho/site5/KPLO_LUTIA_240915_171033_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.775561672217,
+        "max_lat": -43.736849813544,
+        "min_lon": 348.62340388112,
+        "max_lon": 348.69341683873
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "sldem",
+    "region": "apollo15",
+    "sites": {
+      "site1": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15/site1/KPLO_LUTIB_240817_232939_PP_M_00.site1.cub"
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15/site2/KPLO_LUTIB_240817_232939_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.111962516849,
+        "max_lat": 26.157066613284,
+        "min_lon": 3.5161491762712,
+        "max_lon": 3.5992708887071
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15/site3/KPLO_LUTIB_240817_232939_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.007314851638,
+        "max_lat": 26.052410182149,
+        "min_lon": 3.462087586132,
+        "max_lon": 3.5476175307319
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15/site4/KPLO_LUTIB_240817_232939_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.108947983989,
+        "max_lat": 26.154046727756,
+        "min_lon": 3.4970210423768,
+        "max_lon": 3.5754071310005
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo15/site5/KPLO_LUTIB_240817_232939_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIB_240817_232939_PP_M_00",
+        "min_lat": 26.180706347952,
+        "max_lat": 26.22589480151,
+        "min_lon": 3.5060498946496,
+        "max_lon": 3.5899472821713
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "sldem",
+    "region": "apollo17",
+    "sites": {
+      "site1": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17/site1/KPLO_LUTIB_240816_002402_PP_M_00.site1.cub"
+      },
+      "site2": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17/site2/KPLO_LUTIB_240816_002402_PP_M_00.site2.cub"
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17/site3/KPLO_LUTIB_240816_002402_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.468302847833,
+        "max_lat": 20.512982340609,
+        "min_lon": 30.640150589844,
+        "max_lon": 30.696027835544
+      },
+      "site4": {
+        "error": "cube not found: /ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17/site4/KPLO_LUTIB_240816_002402_PP_M_00.site4.cub"
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/apollo17/site5/KPLO_LUTIB_240816_002402_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIB_240816_002402_PP_M_00",
+        "min_lat": 20.587178381328,
+        "max_lat": 20.63185090957,
+        "min_lon": 30.638754021438,
+        "max_lon": 30.698412420932
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "sldem",
+    "region": "eimmartA",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA/site1/KPLO_LUTIA_240909_133303_PP_M_00.site1.cub",
+        "reference_id": "KPLO_LUTIA_240909_133303_PP_M_00",
+        "min_lat": 22.828945299201,
+        "max_lat": 22.86815177455,
+        "min_lon": 65.882673784754,
+        "max_lon": 65.940147279208
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA/site2/KPLO_LUTIA_240909_133303_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIA_240909_133303_PP_M_00",
+        "min_lat": 22.736268579099,
+        "max_lat": 22.77544326048,
+        "min_lon": 65.890642562018,
+        "max_lon": 65.945399435039
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA/site3/KPLO_LUTIA_240909_133303_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIA_240909_133303_PP_M_00",
+        "min_lat": 22.673995065607,
+        "max_lat": 22.713203012804,
+        "min_lon": 65.896400944633,
+        "max_lon": 65.953471272516
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA/site4/KPLO_LUTIA_240909_133303_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIA_240909_133303_PP_M_00",
+        "min_lat": 22.581101398402,
+        "max_lat": 22.62034973818,
+        "min_lon": 65.880328015852,
+        "max_lon": 65.938573701304
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/EinmartA/site5/KPLO_LUTIA_240909_133303_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIA_240909_133303_PP_M_00",
+        "min_lat": 22.530423738228,
+        "max_lat": 22.569641261395,
+        "min_lon": 65.880258554424,
+        "max_lon": 65.937739020289
+      }
+    }
+  },
+  {
+    "mission": "kplo_luti",
+    "dem": "sldem",
+    "region": "tycho",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho/site1/KPLO_LUTIA_240915_171033_PP_M_00.site1.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.381539630993,
+        "max_lat": -43.342966767474,
+        "min_lon": 348.61613810451,
+        "max_lon": 348.68584590303
+      },
+      "site2": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho/site2/KPLO_LUTIA_240915_171033_PP_M_00.site2.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.38273300411,
+        "max_lat": -43.344285776831,
+        "min_lon": 348.59115163611,
+        "max_lon": 348.65529807264
+      },
+      "site3": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho/site3/KPLO_LUTIA_240915_171033_PP_M_00.site3.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.412390347193,
+        "max_lat": -43.37404405798,
+        "min_lon": 348.58316336505,
+        "max_lon": 348.64745863456
+      },
+      "site4": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho/site4/KPLO_LUTIA_240915_171033_PP_M_00.site4.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -42.125414228593,
+        "max_lat": -42.087124359956,
+        "min_lon": 348.59531731391,
+        "max_lon": 348.66436529787
+      },
+      "site5": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/luti/sldem/tycho/site5/KPLO_LUTIA_240915_171033_PP_M_00.site5.cub",
+        "reference_id": "KPLO_LUTIA_240915_171033_PP_M_00",
+        "min_lat": -43.200230925053,
+        "max_lat": -43.161487716955,
+        "min_lon": 348.62134371551,
+        "max_lon": 348.69785882699
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "nacdtm",
+    "region": "LacusMortisPit",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/nacdtm/LacusMortisPit/site1/M1345728205LE.echo.site1.cub",
+        "reference_id": "M1345728205LE",
+        "min_lat": 44.9492159999,
+        "max_lat": 44.96840508124,
+        "min_lon": 25.598365780525,
+        "max_lon": 25.625413479863
+      }
+    }
+  },
+  {
+    "mission": "lro_nac",
+    "dem": "sldem",
+    "region": "LacusMortisPit",
+    "sites": {
+      "site1": {
+        "reference_cube": "/ssd00/datasets/kplo/NeurIPS_2025_dataset/dataset/2026cvpr/sldem/LacusMortisPit/site1/M1345728205LE.echo.site1.cub",
+        "reference_id": "M1345728205LE",
+        "min_lat": 44.949216430287,
+        "max_lat": 44.968405629163,
+        "min_lon": 25.598368489315,
+        "max_lon": 25.625419313319
+      }
+    }
+  }
+]
