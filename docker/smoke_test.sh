@@ -95,9 +95,12 @@ run_check "campt/jigsaw/lronac*/spiceinit/… all resolvable in one shell" \
 
 echo ""
 echo ">>> 4. Lunar Studio campt extensions"
-run_check "campt --help mentions 'useoffset'" \
-    "docker run --rm $IMAGE bash -lc 'campt 2>&1 | head -200'" \
-    "useoffset|USEOFFSET|FORMAT|format=flat"
+# Bare `campt` triggers Qt GUI init (which fails without X), so the
+# reliable check is that our modified campt.xml declares the Lunar
+# Studio flags (USEOFFSET / ALLOWERROR / NLINES / NSAMPLES).
+run_check "campt.xml declares Lunar Studio extensions (USEOFFSET / ALLOWERROR / NLINES)" \
+    "docker run --rm $IMAGE bash -lc 'grep -iE \"useoffset|allowerror|nlines|nsamples\" /opt/ISIS3/build/bin/xml/campt.xml | head -10'" \
+    "USEOFFSET|ALLOWERROR|NLINES|NSAMPLES"
 
 echo ""
 echo ">>> 5. KPLO LUTI camera plugin + translations"
