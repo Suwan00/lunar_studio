@@ -13,6 +13,8 @@ find files of those names at the top level of this repository. **/
 #include <QSharedPointer>
 #include <QVector>
 
+#include <nanoflann.hpp>
+
 namespace Isis {
 
   template <typename T, typename D> class PointCloud;
@@ -80,8 +82,11 @@ namespace Isis {
         }
       }
 
+      // nanoflann >=1.6 hands radiusSearch results back as ResultItem
+      // (previously std::pair<size_t, double>). ResultItem still exposes
+      // .first / .second so the body below is unchanged.
       PointCloudSearchResult(const T &source, const double radius_sq,
-                      std::vector< std::pair<size_t, double> > &matches,
+                      std::vector<nanoflann::ResultItem<unsigned int, double>> &matches,
                       const QSharedPointer<PointCloud<T,D> > &pc,
                       const int nfound = 0) {
         m_search_type = Radius;
